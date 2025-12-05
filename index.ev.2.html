@@ -1,7 +1,394 @@
 <!DOCTYPE html>
-<html>
-<head><title>Evaluare Nr.2</title></head>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluare Nr.2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-img-container {
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
+        
+        .card-img-top {
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .card-img-top:hover {
+            transform: scale(1.05);
+        }
+        
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .card-title {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .page-title {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .gallery-info {
+            background-color: #f8f9fa;
+            border-left: 4px solid #6a11cb;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .modal-img {
+            max-height: 80vh;
+            width: auto;
+            max-width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .card-img-container {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
 <body>
-  <h1>Evaluare Nr.2</h1>
+    <div class="container-fluid px-0">
+        <header class="page-header">
+            <div class="container">
+                <h1 class="page-title text-center mb-0">Evaluare Nr.2</h1>
+                <p class="text-center text-light mb-0 mt-2">Galerie de imagini</p>
+            </div>
+        </header>
+
+        <div class="container py-4">
+            <div class="gallery-info">
+                <h5><i class="bi bi-info-circle-fill text-primary me-2"></i>Informații despre galerie</h5>
+                <p class="mb-0">Total imagini: <strong>17</strong>. Imaginile sunt în orientare verticală. Pentru a vizualiza la dimensiune completă, faceți clic pe imagine.</p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/1.png" data-bs-title="1. Prima imagine">
+                            <img src="img/1.png" class="card-img-top" alt="Imaginea 1">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">1. Prima imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 1</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/2.png" data-bs-title="2. A doua imagine">
+                            <img src="img/2.png" class="card-img-top" alt="Imaginea 2">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">2. A doua imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 2</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/3.png" data-bs-title="3. A treia imagine">
+                            <img src="img/3.png" class="card-img-top" alt="Imaginea 3">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">3. A treia imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/4.png" data-bs-title="4. A patra imagine">
+                            <img src="img/4.png" class="card-img-top" alt="Imaginea 4">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">4. A patra imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/5.png" data-bs-title="5. A cincea imagine">
+                            <img src="img/5.png" class="card-img-top" alt="Imaginea 5">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">5. A cincea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/6.png" data-bs-title="6. A șasea imagine">
+                            <img src="img/6.png" class="card-img-top" alt="Imaginea 6">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">6. A șasea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 6</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/7.png" data-bs-title="7. A șaptea imagine">
+                            <img src="img/7.png" class="card-img-top" alt="Imaginea 7">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">7. A șaptea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 7</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/8.png" data-bs-title="8. A opta imagine">
+                            <img src="img/8.png" class="card-img-top" alt="Imaginea 8">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">8. A opta imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 8</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/9.png" data-bs-title="9. A noua imagine">
+                            <img src="img/9.png" class="card-img-top" alt="Imaginea 9">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">9. A noua imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 9</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/10.png" data-bs-title="10. A zecea imagine">
+                            <img src="img/10.png" class="card-img-top" alt="Imaginea 10">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">10. A zecea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/11.png" data-bs-title="11. A unsprezecea imagine">
+                            <img src="img/11.png" class="card-img-top" alt="Imaginea 11">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">11. A unsprezecea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 11</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/12.png" data-bs-title="12. A douăsprezecea imagine">
+                            <img src="img/12.png" class="card-img-top" alt="Imaginea 12">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">12. A douăsprezecea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 12</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/13.png" data-bs-title="13. A treisprezecea imagine">
+                            <img src="img/13.png" class="card-img-top" alt="Imaginea 13">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">13. A treisprezecea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 13</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/14.png" data-bs-title="14. A paisprezecea imagine">
+                            <img src="img/14.png" class="card-img-top" alt="Imaginea 14">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">14. A paisprezecea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 14</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/15.png" data-bs-title="15. A cinsprezecea imagine">
+                            <img src="img/15.png" class="card-img-top" alt="Imaginea 15">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">15. A cinsprezecea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 15</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/16.png" data-bs-title="16. A șaisprezecea imagine">
+                            <img src="img/16.png" class="card-img-top" alt="Imaginea 16">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">16. A șaisprezecea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 16</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-img-container" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="img/17.png" data-bs-title="17. A șaptesprezecea imagine">
+                            <img src="img/17.png" class="card-img-top" alt="Imaginea 17">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">17. A șaptesprezecea imagine</h5>
+                            <p class="card-text text-muted small">Imagine verticală cu rezoluție înaltă pentru demonstrație.</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-top-0">
+                            <span class="badge bg-primary">Imaginea 17</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5 pt-4 border-top text-center text-muted">
+                <p class="mb-0">Galerie de imagini Evaluare Nr.2 • Total 17 imagini • Orientare verticală</p>
+                <p class="small">Pentru a vizualiza la dimensiune completă, faceți clic pe imagine</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal pentru afișarea imaginii mari -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Titlu imagine</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Închide"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="modal-img" alt="Imagine mare">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Închide</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var imageModal = document.getElementById('imageModal');
+            var modalTitle = document.getElementById('imageModalLabel');
+            var modalImage = document.getElementById('modalImage');
+            
+            imageModal.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget;
+                var imageSrc = button.getAttribute('data-bs-image');
+                var imageTitle = button.getAttribute('data-bs-title');
+                
+                modalTitle.textContent = imageTitle;
+                modalImage.src = imageSrc;
+                modalImage.alt = imageTitle;
+            });
+        });
+    </script>
 </body>
 </html>
